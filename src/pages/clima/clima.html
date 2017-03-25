@@ -1,0 +1,24 @@
+<!--
+  Generated template for the Clima page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{nombre}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<ion-list>
+		<button ion-item *ngFor="let dia of pronosticos">
+			{{dia.temp.day}}°C -- Min: {{dia.temp.min}}°C -- Max: {{dia.temp.max}}°C -- {{dia.fecha | date:'dd-MMM-yyyy'}} -- Velocidad del viento: {{dia.speed}}m/s <!--La velocidad del viento puede ser util en nuestra region por el sector pesquero-->
+		</button>
+	</ion-list>
+
+</ion-content>

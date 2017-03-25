@@ -1,0 +1,29 @@
+<!--
+  Generated template for the Productos page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Productos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item-sliding *ngFor="let producto of listaProductos">
+      <ion-item>
+        {{ producto.nombre }} -- ${{ producto.precio }}
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button (click)="showConfirmar(producto.nombre,producto.productoID)">
+          Borrar
+        </button> <!--Es necesario deslizar a la izquierda el articulo a borrar para mostrar el boton de borrado-->
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
